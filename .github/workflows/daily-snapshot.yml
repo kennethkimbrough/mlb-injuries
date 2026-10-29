@@ -13,40 +13,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Check for an API key
-        id: key
-        env:
-          SPORTSDATA_API_KEY: ${{ secrets.SPORTSDATA_API_KEY }}
-        run: |
-          if [ -z "$SPORTSDATA_API_KEY" ]; then
-            echo "No SPORTSDATA_API_KEY secret is set; skipping." >> "$GITHUB_STEP_SUMMARY"
-            echo "present=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "present=true" >> "$GITHUB_OUTPUT"
-          fi
       - uses: actions/setup-java@v4
-        if: steps.key.outputs.present == 'true'
         with:
           distribution: temurin
           java-version: "17"
           cache: maven
       - name: Build
-        if: steps.key.outputs.present == 'true'
         run: mvn -B -q -DskipTests package
-      - name: Fetch today's list and append it to the history
-        if: steps.key.outputs.present == 'true'
-        env:
-          SPORTSDATA_API_KEY: ${{ secrets.SPORTSDATA_API_KEY }}
+      - name: Fetch today's injured lists and add them to the history
         run: |
           java -jar target/mlb-injuries.jar fetch --save | tee -a "$GITHUB_STEP_SUMMARY"
           echo >> "$GITHUB_STEP_SUMMARY"
           java -jar target/mlb-injuries.jar report >> "$GITHUB_STEP_SUMMARY"
       - name: Commit the history
-        if: steps.key.outputs.present == 'true'
         run: |
-          git config user.name "Kenneth Kimbrough"
-          git config user.email "146112017+kennethkimbrough@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/injuries.csv
           git diff --cached --quiet && echo "No change" && exit 0
-          git commit -m "Record injury snapshot for $(date -u +%Y-%m-%d)"
+          git commit -m "Record injury snapshot for $(TZ=America/New_York date +%Y-%m-%d)"
           git push
