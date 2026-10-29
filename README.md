@@ -57,4 +57,4 @@
 
 <h2>Acknowledgments</h2>
 
-<p>This program utilizes the SportsData.io API for data retrieval. Please note that an API key is required to use this program.</p>
+<p>This program utilizes the SportsData.io API for data retrieval. Please note that an API key is required to use this program: set it in the <code>SPORTSDATA_API_KEY</code> environment variable before running.</p>

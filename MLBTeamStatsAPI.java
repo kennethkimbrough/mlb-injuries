@@ -17,8 +17,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class MLBTeamStatsAPI {
     @SuppressWarnings("deprecation")
     public static void main(String[] args) throws IOException {
-        String apiKey = "5cb68d8734324b25bc0f3f651cde04e5";
-        String url = "https://api.sportsdata.io/v3/mlb/projections/json/InjuredPlayers?key=5cb68d8734324b25bc0f3f651cde04e5";
+        String apiKey = System.getenv("SPORTSDATA_API_KEY");
+        if (apiKey == null || apiKey.isBlank()) {
+            System.err.println("Set the SPORTSDATA_API_KEY environment variable to your SportsData.io API key.");
+            System.exit(1);
+        }
+        String url = "https://api.sportsdata.io/v3/mlb/projections/json/InjuredPlayers?key=" + apiKey;
 
         CloseableHttpClient client = HttpClients.createDefault();
         HttpGet httpGet = new HttpGet(url);
