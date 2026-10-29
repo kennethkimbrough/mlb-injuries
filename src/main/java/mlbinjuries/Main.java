@@ -9,7 +9,7 @@ import java.util.List;
  * Command-line entry point.
  *
  * <pre>
- *   fetch [--save] [--history FILE]   print today's injured players; --save records them to the history
+ *   fetch [--save] [--history FILE]   print today's MLB injured lists; --save records them to the history
  *   report [--top N] [--history FILE] summary statistics from the history
  * </pre>
  */
@@ -43,17 +43,17 @@ public final class Main {
     }
 
     private static void fetch(Path historyFile, boolean save) throws Exception {
-        String apiKey = System.getenv("SPORTSDATA_API_KEY");
-        if (apiKey == null || apiKey.isBlank()) {
-            System.err.println("Set the SPORTSDATA_API_KEY environment variable to your SportsData.io API key.");
-            System.exit(1);
-        }
-        List<InjuredPlayer> players = new SportsDataClient(apiKey).fetchInjuredPlayers();
+        LocalDate today = LocalDate.now(ZoneId.of("America/New_York"));
+        List<InjuredPlayer> players = new MlbStatsClient().fetchInjuredPlayers(today, System.err::println);
         System.out.print(TablePrinter.format(players));
         if (save) {
-            LocalDate today = LocalDate.now(ZoneId.of("America/New_York"));
-            int written = new InjuryHistory(historyFile).save(today, players);
-            System.out.printf("Saved %d rows for %s to %s%n", written, today, historyFile);
+            boolean written = new InjuryHistory(historyFile).save(today, players);
+            if (written) {
+                System.out.printf("Saved %d player%s for %s to %s%n", players.size(),
+                        players.size() == 1 ? "" : "s", today, historyFile);
+            } else {
+                System.out.println("Nobody listed, same as the previous snapshot; history unchanged.");
+            }
         }
     }
 

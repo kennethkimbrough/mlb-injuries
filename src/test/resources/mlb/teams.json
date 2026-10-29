@@ -1,0 +1,9 @@
+{
+  "copyright": "Sample shaped like statsapi.mlb.com/api/v1/teams?sportId=1 (trimmed)",
+  "teams": [
+    {"id": 147, "name": "New York Yankees", "link": "/api/v1/teams/147", "abbreviation": "NYY", "teamName": "Yankees"},
+    {"id": 111, "name": "Boston Red Sox", "link": "/api/v1/teams/111", "abbreviation": "BOS", "teamName": "Red Sox"},
+    {"id": 0, "name": "No id"},
+    {"id": 999, "name": "No abbreviation"}
+  ]
+}

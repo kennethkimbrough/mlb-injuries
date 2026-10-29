@@ -1,0 +1,13 @@
+{
+  "roster": [
+    {"person": {"id": 900002, "fullName": "Casey Sample", "link": "/api/v1/people/900002"},
+     "jerseyNumber": "22", "position": {"code": "2", "name": "Catcher", "type": "Catcher", "abbreviation": "C"},
+     "status": {"code": "D10", "description": "Injured 10-Day"}, "parentTeamId": 147},
+    {"person": {"id": 900004, "fullName": "Alex Example", "link": "/api/v1/people/900004"},
+     "jerseyNumber": "45", "position": {"code": "1", "name": "Pitcher", "type": "Pitcher", "abbreviation": "P"},
+     "status": {"code": "D60", "description": "Injured 60-Day"}, "parentTeamId": 147},
+    {"person": {"id": 900005, "fullName": "Traded Away", "link": "/api/v1/people/900005"},
+     "jerseyNumber": "30", "position": {"code": "1", "name": "Pitcher", "type": "Pitcher", "abbreviation": "P"},
+     "status": {"code": "TR", "description": "Traded"}, "parentTeamId": 147}
+  ]
+}

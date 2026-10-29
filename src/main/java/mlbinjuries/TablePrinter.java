@@ -14,11 +14,11 @@ public final class TablePrinter {
         List<InjuredPlayer> sorted = new ArrayList<>(players);
         sorted.sort(Comparator.comparing(InjuredPlayer::team).thenComparing(InjuredPlayer::name));
 
-        String[] headers = {"Team", "Player", "Pos", "Status", "Body part", "Since"};
+        String[] headers = {"Team", "Player", "Pos", "List", "Injury", "Placed"};
         List<String[]> rows = new ArrayList<>();
         for (InjuredPlayer p : sorted) {
             rows.add(new String[] {
-                    p.team(), p.name(), p.position(), p.status(), p.bodyPart(),
+                    p.team(), p.name(), p.position(), p.status(), shorten(p.injury(), 40),
                     p.startDate() == null ? "" : p.startDate().toString()});
         }
 
@@ -43,6 +43,10 @@ public final class TablePrinter {
         }
         out.append(rows.size()).append(rows.size() == 1 ? " player" : " players").append(" listed\n");
         return out.toString();
+    }
+
+    static String shorten(String s, int max) {
+        return s.length() <= max ? s : s.substring(0, max - 1).stripTrailing() + "\u2026";
     }
 
     private static void appendRow(StringBuilder out, String[] cells, int[] widths) {

@@ -1,0 +1,10 @@
+{
+  "roster": [
+    {"person": {"id": 900006, "fullName": "Blake Fixture", "link": "/api/v1/people/900006"},
+     "jerseyNumber": "7", "position": {"code": "7", "name": "Outfielder", "type": "Outfielder", "abbreviation": "LF"},
+     "status": {"code": "D15", "description": "Injured 15-Day"}, "parentTeamId": 111},
+    {"person": {"id": 900007, "fullName": "In The Minors", "link": "/api/v1/people/900007"},
+     "jerseyNumber": "51", "position": {"code": "1", "name": "Pitcher", "type": "Pitcher", "abbreviation": "P"},
+     "status": {"code": "RM", "description": "Reassigned to Minors"}, "parentTeamId": 111}
+  ]
+}

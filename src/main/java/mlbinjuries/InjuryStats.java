@@ -20,7 +20,7 @@ import java.util.TreeSet;
 public final class InjuryStats {
 
     /** A player's run on the list across snapshots. */
-    public record PlayerSpell(String name, String team, String position, String status, String bodyPart,
+    public record PlayerSpell(String name, String team, String position, String status, String injury,
                               int daysListed, LocalDate firstSeen, LocalDate lastSeen, boolean stillListed) {
     }
 
@@ -31,8 +31,9 @@ public final class InjuryStats {
     private final List<InjuryHistory.Entry> entries;
     private final TreeSet<LocalDate> dates = new TreeSet<>();
 
-    public InjuryStats(List<InjuryHistory.Entry> entries) {
-        this.entries = List.copyOf(entries);
+    public InjuryStats(InjuryHistory.Contents contents) {
+        this.entries = List.copyOf(contents.entries());
+        dates.addAll(contents.snapshotDates());
         for (InjuryHistory.Entry e : entries) {
             dates.add(e.snapshotDate());
         }
@@ -68,7 +69,7 @@ public final class InjuryStats {
                 }
             }
             InjuredPlayer p = last.player();
-            spells.add(new PlayerSpell(p.name(), p.team(), p.position(), p.status(), p.bodyPart(),
+            spells.add(new PlayerSpell(p.name(), p.team(), p.position(), p.status(), p.injury(),
                     seen.size(), seen.first(), seen.last(), seen.last().equals(latest)));
         }
         spells.sort(Comparator.comparingInt(PlayerSpell::daysListed).reversed()
@@ -140,23 +141,28 @@ public final class InjuryStats {
         if (dates.isEmpty()) {
             return "No snapshots recorded yet. Run `fetch --save` first.\n";
         }
-        sb.append(String.format("%d snapshot%s, %s to %s%n%n", dates.size(), dates.size() == 1 ? "" : "s",
+        sb.append(String.format("%d snapshot%s, %s to %s%n", dates.size(), dates.size() == 1 ? "" : "s",
                 firstSnapshot(), latestSnapshot()));
+        LocalDate latest = latestSnapshot();
+        if (entries.stream().noneMatch(e -> e.snapshotDate().equals(latest))) {
+            sb.append("Nobody was on an injured list in the latest snapshot (the lists are not used in the offseason).\n");
+        }
+        sb.append('\n');
 
         sb.append("Longest on the injury list\n");
         List<PlayerSpell> spells = playerSpells();
         for (PlayerSpell s : spells.subList(0, Math.min(topN, spells.size()))) {
             sb.append(String.format("  %3d day%s  %-24s %-4s %-6s %s%s%n", s.daysListed(),
                     s.daysListed() == 1 ? " " : "s", s.name(), s.team(), s.position(),
-                    s.bodyPart().isEmpty() ? s.status() : s.bodyPart(),
-                    s.stillListed() ? "" : "  (off the list since " + s.lastSeen() + ")"));
+                    s.injury().isEmpty() ? s.status() : s.injury(),
+                    s.stillListed() ? "" : "  (last listed " + s.lastSeen() + ")"));
         }
 
         sb.append("\nTeams most affected (player-days listed)\n");
         List<TeamTotal> totals = teamTotals();
         for (TeamTotal t : totals.subList(0, Math.min(topN, totals.size()))) {
             sb.append(String.format("  %-4s %5d player-days, %2d player%s, %2d in the latest snapshot%n",
-                    t.team(), t.playerDays(), t.distinctPlayers(), t.distinctPlayers() == 1 ? " " : "s",
+                    t.team(), t.playerDays(), t.distinctPlayers(), t.distinctPlayers() == 1 ? "" : "s",
                     t.currentlyListed()));
         }
 
@@ -171,7 +177,7 @@ public final class InjuryStats {
             sb.append(String.format("  newly listed: %d%n", added.size()));
             for (InjuredPlayer p : added) {
                 sb.append(String.format("    %-4s %s (%s)%n", p.team(), p.name(),
-                        p.bodyPart().isEmpty() ? p.status() : p.bodyPart()));
+                        p.injury().isEmpty() ? p.status() : p.injury()));
             }
         }
         return sb.toString();

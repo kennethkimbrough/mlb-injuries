@@ -1,0 +1,25 @@
+{
+  "transactions": [
+    {"id": 1, "person": {"id": 900004, "fullName": "Alex Example"}, "toTeam": {"id": 147, "name": "New York Yankees"},
+     "date": "2026-04-12", "effectiveDate": "2026-04-09", "typeCode": "SC", "typeDesc": "Status Change",
+     "description": "New York Yankees placed RHP Alex Example on the 15-day injured list retroactive to April 9, 2026. Right elbow inflammation."},
+    {"id": 2, "person": {"id": 900004, "fullName": "Alex Example"}, "toTeam": {"id": 147, "name": "New York Yankees"},
+     "date": "2026-05-20", "typeCode": "SC", "typeDesc": "Status Change",
+     "description": "New York Yankees transferred RHP Alex Example from the 15-day injured list to the 60-day injured list. Right elbow surgery."},
+    {"id": 3, "person": {"id": 900002, "fullName": "Casey Sample"}, "toTeam": {"id": 147, "name": "New York Yankees"},
+     "date": "2026-05-01", "typeCode": "SC", "typeDesc": "Status Change",
+     "description": "New York Yankees placed C Casey Sample on the 10-day injured list. Left hamstring strain."},
+    {"id": 4, "person": {"id": 900002, "fullName": "Casey Sample"}, "toTeam": {"id": 147, "name": "New York Yankees"},
+     "date": "2026-05-15", "typeCode": "SC", "typeDesc": "Status Change",
+     "description": "New York Yankees activated C Casey Sample from the 10-day injured list."},
+    {"id": 5, "person": {"id": 900002, "fullName": "Casey Sample"}, "toTeam": {"id": 147, "name": "New York Yankees"},
+     "date": "2026-09-02", "typeCode": "SC", "typeDesc": "Status Change",
+     "description": "New York Yankees placed C Casey Sample on the 10-day injured list retroactive to August 31, 2026."},
+    {"id": 6, "person": {"id": 900006, "fullName": "Blake Fixture"}, "toTeam": {"id": 111, "name": "Boston Red Sox"},
+     "date": "2026-08-20", "typeCode": "SC", "typeDesc": "Status Change",
+     "description": "Boston Red Sox placed LF Blake Fixture on the 15-day injured list (right wrist sprain)."},
+    {"id": 7, "person": {"id": 900005, "fullName": "Traded Away"}, "fromTeam": {"id": 147, "name": "New York Yankees"},
+     "toTeam": {"id": 111, "name": "Boston Red Sox"}, "date": "2026-07-30", "typeCode": "TR", "typeDesc": "Trade",
+     "description": "New York Yankees traded RHP Traded Away to Boston Red Sox for cash considerations."}
+  ]
+}

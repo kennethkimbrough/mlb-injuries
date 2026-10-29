@@ -1,0 +1,13 @@
+{
+  "roster": [
+    {"person": {"id": 900001, "fullName": "Active Player", "link": "/api/v1/people/900001"},
+     "jerseyNumber": "11", "position": {"code": "8", "name": "Outfielder", "type": "Outfielder", "abbreviation": "CF"},
+     "status": {"code": "A", "description": "Active"}, "parentTeamId": 147},
+    {"person": {"id": 900002, "fullName": "Casey Sample", "link": "/api/v1/people/900002"},
+     "jerseyNumber": "22", "position": {"code": "2", "name": "Catcher", "type": "Catcher", "abbreviation": "C"},
+     "status": {"code": "D10", "description": "Injured 10-Day"}, "parentTeamId": 147},
+    {"person": {"id": 900003, "fullName": "Note Only", "link": "/api/v1/people/900003"},
+     "jerseyNumber": "6", "position": {"code": "6", "name": "Shortstop", "type": "Infielder", "abbreviation": "SS"},
+     "status": {"code": "D15", "description": "Injured 15-Day"}, "note": "Left oblique strain", "parentTeamId": 147}
+  ]
+}
