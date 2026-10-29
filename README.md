@@ -1,60 +1,95 @@
-<h1>MLB Injury Tracker and Game Predictor</h1>
+# MLB injury tracker
 
-<h2>Overview</h2>
+[![Build](https://github.com/kennethkimbrough/mlb-injuries/actions/workflows/build.yml/badge.svg)](https://github.com/kennethkimbrough/mlb-injuries/actions/workflows/build.yml)
 
-<p>This program is designed to provide a comprehensive view of active injured MLB players, along with additional features to enhance the user's experience. The program utilizes the SportsData.io API to fetch data on injured players and will eventually include features such as:</p>
+A command-line Java program that lists the players currently on MLB injury
+lists, records a snapshot of that list each day, and reports who has been out
+longest and which teams have been hit hardest.
 
-<ul>
-  <li>Scheduled games with pitching matchups</li>
-  <li>Algorithmic calculation of which team will win</li>
-  <li>Algorithmic calculation of total runs</li>
-  <li>Projected home run hitters for the day</li>
-  <li>And more...</li>
-</ul>
+Data comes from the [SportsData.io](https://sportsdata.io/) MLB API, which
+requires an API key.
 
-<h2>Current Features</h2>
+## What it does
 
-<ul>
-  <li>Lists all active injured MLB players, including their name, team, position, and injury status</li>
-</ul>
+```
+$ java -jar target/mlb-injuries.jar fetch
+Team  Player         Pos  Status      Body part  Since
+----  -------------  ---  ----------  ---------  ----------
+BOS   Casey Sample   C    Day-To-Day  Hamstring  2026-05-03
+NYY   Alex Example   SP   Out         Elbow      2026-04-12
+...
+```
 
-<h2>Technical Details</h2>
+`fetch --save` also appends today's list to `data/injuries.csv`, one row per
+player per day. Re-running on the same day replaces that day's rows rather
+than duplicating them.
 
-<ul>
-  <li>Written in Java</li>
-  <li>Utilizes the Apache HTTP Client library for API requests</li>
-  <li>Parses JSON responses using the Jackson library</li>
-  <li>Currently uses the SportsData.io API for data retrieval</li>
-</ul>
+`report` reads the history and prints:
 
-<h2>Code Structure</h2>
+- the players who have appeared in the most daily snapshots, and whether they
+  are still listed;
+- each team's total player-days on the list, distinct players, and how many
+  are listed in the latest snapshot;
+- who came off the list and who was added since the previous snapshot.
 
-<p>The program consists of a single class, <code>MLBTeamStatsAPI</code>, which contains the main method. This class is responsible for:</p>
+A scheduled GitHub Actions workflow runs `fetch --save` every morning and
+commits the updated CSV, so the history grows on its own once the
+`SPORTSDATA_API_KEY` secret is set on the repository. Until it is, the
+workflow skips with a note.
 
-<ul>
-  <li>Sending an HTTP GET request to the SportsData.io API to retrieve injured player data</li>
-  <li>Parsing the JSON response using the Jackson library</li>
-  <li>Extracting relevant data from the JSON response and printing it to the console</li>
-</ul>
+## Run it
 
-<h2>Future Development</h2>
+Requires Java 17+ and Maven.
 
-<p>The program is currently in its early stages, and several features are planned for future development. These include:</p>
+```sh
+export SPORTSDATA_API_KEY=your_key   # from sportsdata.io
 
-<ul>
-  <li>Integrating additional APIs to retrieve data on scheduled games, pitching matchups, and team statistics</li>
-  <li>Implementing algorithmic calculations for game predictions and total runs</li>
-  <li>Developing a user-friendly interface for displaying data and predictions</li>
-</ul>
+mvn -B package                       # builds target/mlb-injuries.jar and runs the tests
+java -jar target/mlb-injuries.jar fetch --save
+java -jar target/mlb-injuries.jar report --top 15
+```
 
-<h2>Contributing</h2>
+Options: `--history FILE` changes where the CSV lives (default
+`data/injuries.csv`); `--top N` sets how many rows the report shows.
 
-<p>If you're interested in contributing to this project, please feel free to submit a pull request or open an issue to discuss potential features or improvements.</p>
+The key is read only from the environment variable and sent as a request
+header, so it never appears in a URL, the history file or a log.
 
-<h2>License</h2>
+## Tests
 
-<p>This program is licensed under the MIT License. See the <code>LICENSE</code> file for details.</p>
+```sh
+mvn test
+```
 
-<h2>Acknowledgments</h2>
+The tests run without a key or network: the parser is tested against a saved
+sample response (`src/test/resources/injured-players-sample.json`, invented
+players with the feed's real field names), the history file against a
+temporary directory, and the statistics against a hand-built set of
+snapshots.
 
-<p>This program utilizes the SportsData.io API for data retrieval. Please note that an API key is required to use this program: set it in the <code>SPORTSDATA_API_KEY</code> environment variable before running.</p>
+## Layout
+
+```
+src/main/java/mlbinjuries/
+  Main.java               command-line entry point (fetch, report)
+  SportsDataClient.java   HTTP call to the InjuredPlayers endpoint
+  InjuryParser.java       JSON array -> InjuredPlayer records, tolerant of missing fields
+  InjuredPlayer.java      one row of the feed
+  TablePrinter.java       aligned text table
+  InjuryHistory.java      daily snapshots in a CSV file
+  InjuryStats.java        days listed, team totals, diffs between snapshots
+  Csv.java                minimal CSV quoting
+src/test/                 JUnit 5 tests and the sample response
+data/injuries.csv         the history, written by fetch --save (and the daily workflow)
+legacy/                   the original single-file version and its hand-written sample CSV
+.github/workflows/        build.yml (tests on every push), daily-snapshot.yml (scheduled fetch)
+```
+
+## Tech stack
+
+Java 17, `java.net.http`, Jackson, JUnit 5, Maven (shade plugin for the
+runnable jar), GitHub Actions.
+
+## License
+
+MIT
