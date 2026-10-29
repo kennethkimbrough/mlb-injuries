@@ -1,0 +1,50 @@
+[
+  {
+    "PlayerID": 10001,
+    "Status": "Injured",
+    "Team": "NYY",
+    "Position": "SP",
+    "FirstName": "Alex",
+    "LastName": "Example",
+    "FantasyDraftName": "Alex Example",
+    "InjuryStatus": "Out",
+    "InjuryBodyPart": "Elbow",
+    "InjuryStartDate": "2026-04-12T00:00:00",
+    "InjuryNotes": "60-day IL, no timetable for return."
+  },
+  {
+    "PlayerID": 10002,
+    "Status": "Injured",
+    "Team": "BOS",
+    "Position": "C",
+    "FirstName": "Casey",
+    "LastName": "Sample",
+    "FantasyDraftName": "Casey Sample",
+    "InjuryStatus": "Day-To-Day",
+    "InjuryBodyPart": "Hamstring",
+    "InjuryStartDate": "2026-05-03T00:00:00",
+    "InjuryNotes": null
+  },
+  {
+    "PlayerID": 10003,
+    "Status": "Injured",
+    "Team": "NYY",
+    "Position": "RF",
+    "FirstName": null,
+    "LastName": null,
+    "FantasyDraftName": "Fallback Name",
+    "InjuryStatus": null,
+    "InjuryBodyPart": null,
+    "InjuryStartDate": null,
+    "InjuryNotes": "Notes with, a comma and \"quotes\""
+  },
+  {
+    "PlayerID": 10004,
+    "Status": "Injured",
+    "Team": null,
+    "Position": "1B",
+    "FirstName": "No",
+    "LastName": "Team",
+    "InjuryStatus": "Out"
+  }
+]
