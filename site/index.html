@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MLB Injured Lists</title>
+  <meta name="description" content="Every player on an MLB injured list, recorded daily from MLB's public Stats API: by body part, by team, who has been out longest, and who came off or went on.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='%23fff' stroke='%23c8102e' stroke-width='4'/%3E%3Cpath d='M18 14c6 10 6 26 0 36M46 14c-6 10-6 26 0 36' fill='none' stroke='%23c8102e' stroke-width='3'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --bg: #f6f5f1; --card: #ffffff; --ink: #14213d; --ink-2: #4a5568; --ink-3: #8a94a6; --line: #dfe3ea;
+      --accent: #c8102e; --accent-soft: #f8dde2; --navy: #1d3557; --navy-soft: #a8b8d0; --ok: #2f7d4f;
+      --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #0f141c; --card: #171e29; --ink: #e8edf5; --ink-2: #b4bfd0; --ink-3: #7c889c; --line: #2a3443;
+        --accent: #ff5c74; --accent-soft: #3a1c24; --navy: #8fb1e3; --navy-soft: #3b5272; --ok: #6cc28f;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #0f141c; --card: #171e29; --ink: #e8edf5; --ink-2: #b4bfd0; --ink-3: #7c889c; --line: #2a3443;
+      --accent: #ff5c74; --accent-soft: #3a1c24; --navy: #8fb1e3; --navy-soft: #3b5272; --ok: #6cc28f;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.5 var(--sans); }
+    a { color: var(--navy); }
+    header, main, footer { max-width: 60rem; margin: 0 auto; padding: 0 16px; }
+    header { padding-top: 2.5rem; }
+    .kicker { margin: 0; color: var(--accent); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; font-size: .8rem; }
+    h1 { margin: .2rem 0 .4rem; font-size: clamp(2rem, 6vw, 3.2rem); line-height: 1.05; letter-spacing: -.02em; }
+    .lede { color: var(--ink-2); max-width: 42rem; margin: 0 0 1rem; }
+    .status { font-family: var(--mono); font-size: .85rem; color: var(--ink-2); }
+    .banner { border-left: 4px solid var(--accent); background: var(--accent-soft); padding: .7rem 1rem; margin: 1rem 0 0; border-radius: 4px; }
+    .tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 1.5rem 0; }
+    @media (min-width: 720px) { .tiles { grid-template-columns: repeat(4, 1fr); } }
+    .tile { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: .9rem 1rem; }
+    .tile .v { font-size: 1.9rem; font-weight: 700; line-height: 1.1; font-variant-numeric: tabular-nums; }
+    .tile .k { color: var(--ink-2); font-size: .85rem; }
+    section { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 1.1rem 1rem 1.2rem; margin: 0 0 14px; }
+    h2 { margin: 0 0 .2rem; font-size: 1.15rem; }
+    .sub { margin: 0 0 .9rem; color: var(--ink-2); font-size: .9rem; }
+    .grid2 { display: grid; gap: 14px; }
+    @media (min-width: 820px) { .grid2 { grid-template-columns: 1fr 1fr; } .grid2 section { margin: 0; } }
+    .bars { display: flex; flex-direction: column; gap: 5px; }
+    .bar { display: grid; grid-template-columns: 9.5rem 1fr 2.2rem; gap: 8px; align-items: center; font-size: .9rem; }
+    .bar .name { text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--ink-2); }
+    .bar .track { display: flex; height: 14px; border-radius: 3px; overflow: hidden; background: color-mix(in srgb, var(--line) 45%, transparent); }
+    .bar .p { background: var(--accent); } .bar .h { background: var(--navy-soft); }
+    .bar .n { font-family: var(--mono); font-size: .8rem; color: var(--ink-2); text-align: right; }
+    .bar button { all: unset; cursor: pointer; text-align: right; color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .bar button:hover, .bar button:focus-visible { color: var(--ink); text-decoration: underline; }
+    @media (max-width: 480px) { .bar { grid-template-columns: 6.5rem 1fr 2rem; } }
+    .legend { display: flex; gap: 14px; font-size: .82rem; color: var(--ink-2); margin-top: .7rem; }
+    .legend i { display: inline-block; width: 12px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
+    ol.list { margin: 0; padding-left: 1.4rem; } ol.list li { margin: .25rem 0; }
+    .muted { color: var(--ink-3); }
+    .days { font-family: var(--mono); font-size: .85rem; color: var(--accent); white-space: nowrap; }
+    .changes { display: grid; gap: 14px; } @media (min-width: 720px) { .changes { grid-template-columns: 1fr 1fr; } }
+    .changes h3 { font-size: .95rem; margin: 0 0 .3rem; }
+    .changes ul { margin: 0; padding-left: 1.1rem; font-size: .92rem; }
+    .controls { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: .8rem; }
+    input, select { font: inherit; color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: .5rem .65rem; min-height: 44px; }
+    input[type=search] { flex: 1 1 14rem; }
+    input:focus-visible, select:focus-visible, button:focus-visible { outline: 3px solid var(--navy); outline-offset: 1px; }
+    .table-wrap { overflow-x: auto; }
+    table { border-collapse: collapse; width: 100%; font-size: .9rem; }
+    th, td { text-align: left; padding: .45rem .5rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { color: var(--ink-3); font-weight: 600; font-size: .78rem; text-transform: uppercase; letter-spacing: .05em; white-space: nowrap; }
+    td.num { font-family: var(--mono); text-align: right; white-space: nowrap; }
+    td.team { font-family: var(--mono); font-weight: 700; }
+    svg text { fill: var(--ink-3); font: 11px var(--sans); }
+    footer { color: var(--ink-3); font-size: .85rem; padding-bottom: 3rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="kicker">Major League Baseball</p>
+    <h1>Who's on the injured list</h1>
+    <p class="lede">Every player on an MLB injured list, recorded once a day from MLB's public Stats API. A scheduled job adds each day's lists to the history, and this page is rebuilt from it.</p>
+    <p class="status" id="status">Loading…</p>
+    <div id="banner"></div>
+  </header>
+  <main>
+    <div class="tiles" id="tiles"></div>
+    <div class="grid2">
+      <section>
+        <h2>By body part</h2>
+        <p class="sub">Grouped from the injury named in each placement. Pitchers in red.</p>
+        <div class="bars" id="parts"></div>
+        <div class="legend"><span><i style="background:var(--accent)"></i>Pitchers</span><span><i style="background:var(--navy-soft)"></i>Position players</span></div>
+      </section>
+      <section>
+        <h2>By team</h2>
+        <p class="sub">Select a team to filter the full list below.</p>
+        <div class="bars" id="teams"></div>
+      </section>
+    </div>
+    <div class="grid2" style="margin-top:14px">
+      <section>
+        <h2>Out the longest</h2>
+        <p class="sub">Days since the placement, as of the snapshot.</p>
+        <ol class="list" id="longest"></ol>
+      </section>
+      <section>
+        <h2>Since the previous day</h2>
+        <p class="sub" id="changes-sub"></p>
+        <div class="changes" id="changes"></div>
+      </section>
+    </div>
+    <section style="margin-top:14px">
+      <h2>Players listed, day by day</h2>
+      <p class="sub" id="history-sub"></p>
+      <div id="history"></div>
+    </section>
+    <section>
+      <h2>The full list</h2>
+      <div class="controls">
+        <input id="q" type="search" placeholder="Search player or injury" aria-label="Search player or injury">
+        <select id="team" aria-label="Team"><option value="">All teams</option></select>
+        <select id="pos" aria-label="Position">
+          <option value="">All positions</option><option value="P">Pitchers</option><option value="H">Position players</option>
+        </select>
+      </div>
+      <p class="sub" id="count"></p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Team</th><th>Player</th><th>Pos</th><th>List</th><th>Injury</th><th>Placed</th><th class="num">Days</th></tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>Data: MLB Stats API (<code>statsapi.mlb.com</code>), copyright MLB Advanced Media, used for personal, non-commercial purposes. The full history is a plain CSV: <a href="injuries.csv">injuries.csv</a>. Code, tests and the daily job: <a href="https://github.com/kennethkimbrough/mlb-injuries">github.com/kennethkimbrough/mlb-injuries</a>.</p>
+  </footer>
+  <noscript><p style="max-width:60rem;margin:0 auto;padding:0 16px">This page needs JavaScript. The data is <a href="injuries.csv">a plain CSV file</a>.</p></noscript>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

@@ -15,3 +15,8 @@ jobs:
           java-version: "17"
           cache: maven
       - run: mvn -B verify
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Test the page logic
+        run: node --test site/injuries.test.mjs

@@ -1,0 +1,52 @@
+name: Publish page
+
+on:
+  push:
+    branches: [main]
+    paths: ["site/**", "data/**", ".github/workflows/pages.yml"]
+  # Pushes made by the daily job's token do not trigger workflows, so publish
+  # again whenever the daily snapshot finishes.
+  workflow_run:
+    workflows: ["Daily injury snapshot"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Test the page logic against the real history
+        run: node --test site/injuries.test.mjs
+      - name: Assemble the site
+        run: |
+          mkdir _site
+          cp site/index.html site/app.js site/injuries.js _site/
+          cp data/injuries.csv _site/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

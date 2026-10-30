@@ -6,6 +6,11 @@ A command-line Java program that lists every player currently on an MLB
 injured list, records a snapshot of the lists each day, and reports who has
 been out longest and which teams have been hit hardest.
 
+**Live page:** https://kennethkimbrough.github.io/mlb-injuries/ shows the
+latest lists by body part and by team, who has been out longest, who went on
+or came off since the previous day, and the daily count over time. It is
+rebuilt after every daily snapshot.
+
 Data comes from MLB's public Stats API (`statsapi.mlb.com`). No API key or
 account is needed.
 
@@ -59,6 +64,25 @@ and February the lists are empty, so the first empty day is recorded (as a
 row holding only the date) and nothing more is written until players appear
 again.
 
+## The page
+
+`site/` is a static page with no build step and no dependencies. It reads
+`injuries.csv` directly in the browser. `site/injuries.js` holds the logic
+(CSV parsing, daily snapshots, body-part grouping, days out, day-to-day diffs)
+with no DOM code, so `site/injuries.test.mjs` tests it under `node --test`,
+including against the real history. Injuries are grouped by body part from
+the text of each placement ("Right elbow UCL sprain" is Elbow, "Lumbar strain"
+is Back); the rare ones that match nothing show as Other.
+
+`.github/workflows/pages.yml` publishes it to GitHub Pages on every push to
+`site/` or `data/`, and again each time the daily snapshot finishes.
+
+To look at it locally:
+
+```sh
+cp data/injuries.csv site/ && (cd site && python3 -m http.server 8000)
+```
+
 ## Run it
 
 Requires Java 17+ and Maven.
@@ -101,13 +125,16 @@ src/main/java/mlbinjuries/
 src/test/               JUnit 5 tests and sample API responses
 data/injuries.csv       the history, written by fetch --save (and the daily workflow)
 legacy/                 the original single-file SportsData.io version and its sample CSV
-.github/workflows/      build.yml (tests on every push), daily-snapshot.yml (scheduled fetch)
+site/                   the live page: index.html, app.js, injuries.js (logic) and its node tests
+.github/workflows/      build.yml (Java and page tests on every push), daily-snapshot.yml (scheduled fetch),
+                        pages.yml (publishes site/ with the latest CSV)
 ```
 
 ## Tech stack
 
 Java 17, `java.net.http`, Jackson, JUnit 5, Maven (shade plugin for the
-runnable jar), GitHub Actions.
+runnable jar), GitHub Actions and GitHub Pages; the page is plain HTML and
+JavaScript, tested with `node:test`.
 
 ## Data
 
