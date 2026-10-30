@@ -137,3 +137,136 @@ snapshot_date,player_id,name,team,position,status,injury,start_date,notes
 2026-10-29,663362,Matt Waldron,WSH,P,60-day IL,Chest inflammation,2026-09-08,Washington Nationals transferred RHP Matt Waldron from the 15-day injured list to the 60-day injured list. Chest inflammation.
 2026-10-29,680730,Mitchell Parker,WSH,P,60-day IL,Left elbow inflammation,2026-06-29,Washington Nationals transferred LHP Mitchell Parker from the 15-day injured list to the 60-day injured list. Left elbow inflammation.
 2026-10-29,676571,PJ Poulin,WSH,P,60-day IL,Left flexor strain,2026-07-19,Washington Nationals transferred LHP PJ Poulin from the 15-day injured list to the 60-day injured list. Left flexor strain.
+2026-10-30,667670,Brent Rooker,ATH,DH,60-day IL,Bone bruise in left knee,2026-06-12,Athletics transferred DH Brent Rooker from the 10-day injured list to the 60-day injured list. Bone bruise in left knee.
+2026-10-30,680684,Gunnar Hoglund,ATH,P,60-day IL,Sprained right knee,2026-03-23,Athletics transferred RHP Gunnar Hoglund from the 15-day injured list to the 60-day injured list. Sprained right knee.
+2026-10-30,669372,J.T. Ginn,ATH,P,60-day IL,Right elbow impingement,2026-09-05,Athletics transferred RHP J.T. Ginn from the 15-day injured list to the 60-day injured list. Right elbow impingement.
+2026-10-30,805779,Jacob Wilson,ATH,SS,60-day IL,Left shoulder subluxation,2026-08-21,Athletics transferred SS Jacob Wilson from the 10-day injured list to the 60-day injured list. Left shoulder subluxation.
+2026-10-30,686993,Justin Sterner,ATH,P,60-day IL,Right knee chondromalacia,2026-07-18,Athletics transferred RHP Justin Sterner from the 15-day injured list to the 60-day injured list. Right knee chondromalacia.
+2026-10-30,622663,Luis Severino,ATH,P,60-day IL,Right shoulder strain,2026-05-30,Athletics transferred RHP Luis Severino from the 15-day injured list to the 60-day injured list. Right shoulder strain.
+2026-10-30,701762,Nick Kurtz,ATH,1B,60-day IL,Strained right thumb,2026-08-04,Athletics transferred 1B Nick Kurtz from the 10-day injured list to the 60-day injured list. Strained right thumb.
+2026-10-30,691016,Tyler Soderstrom,ATH,LF,60-day IL,Left hip impingement,2026-08-16,Athletics transferred LF Tyler Soderstrom from the 10-day injured list to the 60-day injured list. Left hip impingement.
+2026-10-30,675911,Spencer Strider,ATL,P,60-day IL,Right elbow inflammation,2026-06-13,Atlanta Braves transferred RHP Spencer Strider from the 15-day injured list to the 60-day injured list. Right elbow inflammation.
+2026-10-30,685314,Andrew Saalfrank,AZ,P,60-day IL,Left labrum repair surgery,2026-02-10,Arizona Diamondbacks placed LHP Andrew Saalfrank on the 60-day injured list. Left labrum repair surgery.
+2026-10-30,691441,Cristian Mena,AZ,P,60-day IL,Right shoulder strain,2026-03-25,Arizona Diamondbacks placed RHP Cristian Mena on the 60-day injured list. Right shoulder strain.
+2026-10-30,682988,Tyler Locklear,AZ,1B,60-day IL,Fractured right thumb,2026-09-12,Arizona Diamondbacks placed 1B Tyler Locklear on the 60-day injured list. Fractured right thumb.
+2026-10-30,681882,Colin Selby,BAL,P,60-day IL,Right shoulder inflammation,2026-02-14,Baltimore Orioles placed RHP Colin Selby on the 60-day injured list. Right shoulder inflammation.
+2026-10-30,676059,Jordan Westburg,BAL,3B,60-day IL,Right elbow UCL sprain,2026-03-25,Baltimore Orioles transferred 3B Jordan Westburg from the 10-day injured list to the 60-day injured list. Right elbow UCL sprain.
+2026-10-30,680694,Kyle Bradish,BAL,P,60-day IL,Lower abdominal discomfort,2026-09-13,Baltimore Orioles transferred RHP Kyle Bradish from the 15-day injured list to the 60-day injured list. Lower abdominal discomfort.
+2026-10-30,664854,Ryan Helsley,BAL,P,60-day IL,Right elbow discomfort,2026-07-03,Baltimore Orioles transferred RHP Ryan Helsley from the 15-day injured list to the 60-day injured list. Right elbow discomfort.
+2026-10-30,663624,Ryan Mountcastle,BAL,1B,60-day IL,Left foot fracture,2026-04-13,Baltimore Orioles placed 1B Ryan Mountcastle on the 60-day injured list. Left foot fracture.
+2026-10-30,641933,Tyler O'Neill,BAL,RF,60-day IL,Right shoulder inflammation,2026-08-26,Baltimore Orioles transferred RF Tyler O'Neill from the 10-day injured list to the 60-day injured list. Right shoulder inflammation.
+2026-10-30,700842,Eduardo Rivera,BOS,P,60-day IL,Lumbar strain,2026-09-01,Boston Red Sox placed LHP Eduardo Rivera on the 60-day injured list. Lumbar strain.
+2026-10-30,642201,Eli White,BOS,CF,60-day IL,Right foot ligament injury,2026-09-11,Boston Red Sox transferred CF Eli White from the 10-day injured list to the 60-day injured list. Right foot ligament injury.
+2026-10-30,670912,Johan Oviedo,BOS,P,60-day IL,Right elbow strain,2026-04-03,Boston Red Sox transferred RHP Johan Oviedo from the 15-day injured list to the 60-day injured list. Right elbow strain.
+2026-10-30,686580,Justin Slaten,BOS,P,60-day IL,Right elbow inflammation,2026-08-16,Boston Red Sox transferred RHP Justin Slaten from the 15-day injured list to the 60-day injured list. Right elbow inflammation.
+2026-10-30,676710,Kutter Crawford,BOS,P,60-day IL,Right wrist surgery,2026-05-22,Boston Red Sox placed RHP Kutter Crawford on the 60-day injured list. Right wrist surgery.
+2026-10-30,671213,Triston Casas,BOS,1B,60-day IL,Recovery from left patellar tendon repair,2026-03-25,Boston Red Sox transferred 1B Triston Casas from the 10-day injured list to the 60-day injured list. Recovery from left patellar tendon repair.
+2026-10-30,677161,Zack Kelly,BOS,P,60-day IL,Right elbow inflammation,2026-07-21,Boston Red Sox placed RHP Zack Kelly on the 60-day injured list. Right elbow inflammation.
+2026-10-30,676962,Ben Brown,CHC,P,60-day IL,Neck strain,2026-06-24,Chicago Cubs transferred RHP Ben Brown from the 15-day injured list to the 60-day injured list. Neck strain.
+2026-10-30,690990,Cade Horton,CHC,P,60-day IL,Right forearm strain,2026-04-05,Chicago Cubs transferred RHP Cade Horton from the 15-day injured list to the 60-day injured list. Right forearm strain.
+2026-10-30,640451,Hunter Harvey,CHC,P,60-day IL,Right triceps inflammation,2026-04-12,Chicago Cubs transferred RHP Hunter Harvey from the 15-day injured list to the 60-day injured list. Right triceps inflammation.
+2026-10-30,657006,Justin Steele,CHC,P,60-day IL,Left elbow injury,2026-03-25,Chicago Cubs placed LHP Justin Steele on the 60-day injured list. Left elbow injury.
+2026-10-30,664208,Phil Maton,CHC,P,60-day IL,Right knee tendinitis,2026-07-20,Chicago Cubs transferred RHP Phil Maton from the 15-day injured list to the 60-day injured list. Right knee tendinitis.
+2026-10-30,687863,Porter Hodge,CHC,P,60-day IL,Right elbow strain,2026-03-25,Chicago Cubs transferred RHP Porter Hodge from the 15-day injured list to the 60-day injured list. Right elbow strain.
+2026-10-30,702303,Riley Martin,CHC,P,60-day IL,Left elbow inflammation,2026-04-26,Chicago Cubs transferred LHP Riley Martin from the 15-day injured list to the 60-day injured list. Left elbow inflammation.
+2026-10-30,571946,Shelby Miller,CHC,P,60-day IL,Right Elbow UCL Injury,2026-03-01,Chicago Cubs placed RHP Shelby Miller on the 60-day injured list. Right Elbow UCL Injury.
+2026-10-30,592122,Tyler Austin,CHC,1B,60-day IL,Right knee surgery,2026-03-24,Chicago Cubs placed 1B Tyler Austin on the 60-day injured list. Right knee surgery.
+2026-10-30,801403,Chase Dollander,COL,P,60-day IL,Right elbow strain,2026-05-15,Colorado Rockies transferred RHP Chase Dollander from the 15-day injured list to the 60-day injured list. Right elbow strain.
+2026-10-30,592178,Kris Bryant,COL,DH,60-day IL,Lumbar degenerative disk disease,2026-02-10,Colorado Rockies placed DH Kris Bryant on the 60-day injured list. Lumbar degenerative disk disease.
+2026-10-30,685326,McCade Brown,COL,P,60-day IL,Right shoulder inflammation,2026-03-25,Colorado Rockies transferred RHP McCade Brown from the 15-day injured list to the 60-day injured list. Right shoulder inflammation.
+2026-10-30,701487,Pierson Ohl,COL,P,60-day IL,,2026-03-25,Colorado Rockies placed RHP Pierson Ohl on the 60-day injured list.
+2026-10-30,700327,Welinton Herrera,COL,P,60-day IL,Left elbow inflammation,2026-05-30,Colorado Rockies transferred LHP Welinton Herrera from the 15-day injured list to the 60-day injured list. Left elbow inflammation.
+2026-10-30,690544,Bailey Horn,DET,P,60-day IL,Left elbow arthroscopy recovery,2026-04-22,Detroit Tigers placed LHP Bailey Horn on the 60-day injured list. Left elbow arthroscopy recovery.
+2026-10-30,681481,Kerry Carpenter,DET,RF,60-day IL,Left foot plantar fasciitis,2026-07-27,Detroit Tigers transferred RF Kerry Carpenter from the 10-day injured list to the 60-day injured list. Left foot plantar fasciitis.
+2026-10-30,663837,Matt Vierling,DET,CF,60-day IL,Left adductor strain,2026-07-31,Detroit Tigers transferred CF Matt Vierling from the 10-day injured list to the 60-day injured list. Left adductor strain.
+2026-10-30,678009,Parker Meadows,DET,CF,60-day IL,Left radius fracture,2026-04-10,Detroit Tigers transferred CF Parker Meadows from the 10-day injured list to the 60-day injured list. Left radius fracture.
+2026-10-30,681857,Reese Olson,DET,P,60-day IL,Right Shoulder Labral Repair,2026-02-10,Detroit Tigers placed RHP Reese Olson on the 60-day injured list. Right Shoulder Labral Repair.
+2026-10-30,700242,Trey Sweeney,DET,SS,60-day IL,Right shoulder strain,2026-03-25,Detroit Tigers transferred SS Trey Sweeney from the 10-day injured list to the 60-day injured list. Right shoulder strain.
+2026-10-30,672761,Wenceel Pérez,DET,RF,60-day IL,Left orbital fracture,2026-06-19,Detroit Tigers transferred RF Wenceel Pérez from the 10-day injured list to the 60-day injured list. Left orbital fracture.
+2026-10-30,676684,Will Vest,DET,P,60-day IL,Right posterior elbow inflammation,2026-07-01,Detroit Tigers transferred RHP Will Vest from the 15-day injured list to the 60-day injured list. Right posterior elbow inflammation.
+2026-10-30,687888,Brandon Walter,HOU,P,60-day IL,Left elbow surgery recovery,2026-03-25,Houston Astros placed LHP Brandon Walter on the 60-day injured list. Left elbow surgery recovery.
+2026-10-30,621043,Carlos Correa,HOU,SS,60-day IL,Left ankle tendon injury,2026-05-06,Houston Astros transferred SS Carlos Correa from the 10-day injured list to the 60-day injured list. Left ankle tendon injury.
+2026-10-30,676694,Jake Meyers,HOU,CF,60-day IL,Left knee fracture,2026-09-23,Houston Astros placed CF Jake Meyers on the 60-day injured list.
+2026-10-30,681347,Mike Burrows,HOU,P,60-day IL,,2026-09-06,Houston Astros placed RHP Mike Burrows on the 60-day injured list.
+2026-10-30,608032,Carlos Estévez,KC,P,60-day IL,Left foot contusion,2026-06-15,Kansas City Royals placed RHP Carlos Estévez on the 60-day injured list. Left foot contusion.
+2026-10-30,666142,Cole Ragans,KC,P,60-day IL,Left elbow impingement,2026-06-17,Kansas City Royals placed LHP Cole Ragans on the 60-day injured list. Left elbow impingement.
+2026-10-30,679883,Luinder Avila,KC,P,60-day IL,Right forearm tightness,2026-08-02,Kansas City Royals transferred RHP Luinder Avila from the 15-day injured list to the 60-day injured list. Right forearm tightness.
+2026-10-30,683232,Nick Mears,KC,P,60-day IL,Right shoulder impingement,2026-05-29,Kansas City Royals transferred RHP Nick Mears from the 15-day injured list to the 60-day injured list. Right shoulder impingement.
+2026-10-30,663568,Stephen Kolek,KC,P,60-day IL,Right flexor strain,2026-07-19,Kansas City Royals transferred RHP Stephen Kolek from the 15-day injured list to the 60-day injured list. Right flexor strain.
+2026-10-30,686799,Jack Kochanowicz,LAA,P,60-day IL,Right elbow inflammation,2026-06-07,Los Angeles Angels transferred RHP Jack Kochanowicz from the 15-day injured list to the 60-day injured list. Right elbow inflammation.
+2026-10-30,596112,Robert Stephenson,LAA,P,60-day IL,Right elbow inflammation,2026-03-24,Los Angeles Angels placed RHP Robert Stephenson on the 60-day injured list. Right elbow inflammation.
+2026-10-30,676508,Ben Casparius,LAD,P,60-day IL,Right shoulder inflammation,2026-04-13,Los Angeles Dodgers transferred RHP Ben Casparius from the 15-day injured list to the 60-day injured list. Right shoulder inflammation.
+2026-10-30,694813,Gavin Stone,LAD,P,60-day IL,Right shoulder inflammation,2026-03-23,Los Angeles Dodgers transferred RHP Gavin Stone from the 15-day injured list to the 60-day injured list. Right shoulder inflammation.
+2026-10-30,664776,Jake Cousins,LAD,P,60-day IL,,2026-03-24,Los Angeles Dodgers transferred RHP Jake Cousins from the 15-day injured list to the 60-day injured list.
+2026-10-30,694361,Will Klein,LAD,P,60-day IL,Right elbow discomfort,2026-08-01,Los Angeles Dodgers transferred RHP Will Klein from the 15-day injured list to the 60-day injured list. Right elbow discomfort.
+2026-10-30,800049,Adam Mazur,MIA,P,60-day IL,Right elbow surgery,2026-03-25,Miami Marlins placed RHP Adam Mazur on the 60-day injured list. Right elbow surgery.
+2026-10-30,677053,Andrew Nardi,MIA,P,60-day IL,Left rib cage stress reaction,2026-05-30,Miami Marlins transferred LHP Andrew Nardi from the 15-day injured list to the 60-day injured list. Left rib cage stress reaction.
+2026-10-30,702281,Robby Snelling,MIA,P,60-day IL,Left elbow UCL sprain,2026-05-13,Miami Marlins placed LHP Robby Snelling on the 15-day injured list. Left elbow UCL sprain.
+2026-10-30,678692,Ronny Henriquez,MIA,P,60-day IL,Right Elbow Surgery,2026-02-12,Miami Marlins placed RHP Ronny Henriquez on the 60-day injured list. Right Elbow Surgery.
+2026-10-30,687531,William Kempner,MIA,P,60-day IL,Right elbow sprain,2026-07-12,Miami Marlins transferred RHP William Kempner from the 15-day injured list to the 60-day injured list. Right elbow sprain.
+2026-10-30,672582,Angel Zerpa,MIL,P,60-day IL,Left forearm tightness,2026-04-29,Milwaukee Brewers transferred LHP Angel Zerpa from the 15-day injured list to the 60-day injured list. Left forearm tightness.
+2026-10-30,702153,Brian Fitzpatrick,MIL,P,60-day IL,Left elbow injury,2026-06-06,Milwaukee Brewers transferred LHP Brian Fitzpatrick from the 15-day injured list to the 60-day injured list. Left elbow injury.
+2026-10-30,682990,Quinn Priester,MIL,P,60-day IL,Right thoracic outlet syndrome,2026-06-06,Milwaukee Brewers placed RHP Quinn Priester on the 60-day injured list. Right thoracic outlet syndrome.
+2026-10-30,663485,Cole Sands,MIN,P,60-day IL,Right elbow strain,2026-07-28,Minnesota Twins transferred RHP Cole Sands from the 15-day injured list to the 60-day injured list. Right elbow strain.
+2026-10-30,701581,David Festa,MIN,P,60-day IL,Right shoulder impingement,2026-03-25,Minnesota Twins transferred RHP David Festa from the 15-day injured list to the 60-day injured list. Right shoulder impingement.
+2026-10-30,690953,Mick Abel,MIN,P,60-day IL,Right elbow inflammation,2026-07-10,Minnesota Twins placed RHP Mick Abel on the 60-day injured list. Right elbow inflammation.
+2026-10-30,702474,Mike Paredes,MIN,P,60-day IL,Left oblique strain,2026-07-26,Minnesota Twins transferred RHP Mike Paredes from the 15-day injured list to the 60-day injured list. Left oblique strain.
+2026-10-30,641154,Pablo López,MIN,P,60-day IL,Tommy John surgery,2026-02-26,Minnesota Twins placed RHP Pablo López on the 60-day injured list. Tommy John surgery.
+2026-10-30,593871,Jorge Polanco,NYM,DH,60-day IL,Left ankle bursitis,2026-08-19,New York Mets transferred DH Jorge Polanco from the 10-day injured list to the 60-day injured list.
+2026-10-30,657585,Reed Garrett,NYM,P,60-day IL,,2026-02-10,New York Mets placed RHP Reed Garrett on the 60-day injured list.
+2026-10-30,656731,Tylor Megill,NYM,P,60-day IL,Right elbow sprain,2026-02-12,New York Mets placed RHP Tylor Megill on the 60-day injured list. Right elbow sprain.
+2026-10-30,518585,Fernando Cruz,NYY,P,60-day IL,Right elbow discomfort,2026-08-26,New York Yankees transferred RHP Fernando Cruz from the 15-day injured list to the 60-day injured list. Right elbow discomfort.
+2026-10-30,665645,Kervin Castro,NYY,P,60-day IL,Right elbow neuritis,2026-08-11,New York Yankees transferred RHP Kervin Castro from the 15-day injured list to the 60-day injured list. Right elbow neuritis.
+2026-10-30,641745,Brad Keller,PHI,P,60-day IL,Right elbow UCL tear,2026-07-16,Philadelphia Phillies transferred RHP Brad Keller from the 15-day injured list to the 60-day injured list. Right elbow UCL tear.
+2026-10-30,668873,Caleb Kilian,PHI,P,60-day IL,Left oblique strain,2026-08-10,Philadelphia Phillies transferred RHP Caleb Kilian from the 15-day injured list to the 60-day injured list. Left oblique strain.
+2026-10-30,694025,Felix Reyes,PHI,LF,60-day IL,Right wrist fracture,2026-08-20,Philadelphia Phillies transferred LF Felix Reyes from the 7-day injured list to the 60-day injured list. Right wrist fracture.
+2026-10-30,679032,Johan Rojas,PHI,CF,60-day IL,Right elbow UCL repair,2026-06-25,Philadelphia Phillies placed CF Johan Rojas on the 60-day injured list. Right elbow UCL repair.
+2026-10-30,682848,Endy Rodríguez,PIT,C,60-day IL,Left hip inflammation,2026-08-13,Pittsburgh Pirates transferred C Endy Rodríguez from the 10-day injured list to the 60-day injured list. Left hip inflammation.
+2026-10-30,656605,Mitch Keller,PIT,P,60-day IL,Right arm teres major muscle injury,2026-08-03,Pittsburgh Pirates placed RHP Mitch Keller on the 60-day injured list. Right arm teres major muscle injury.
+2026-10-30,663773,Bryan Hoeing,SD,P,60-day IL,Torn right elbow flexor tendon,2026-03-25,San Diego Padres transferred RHP Bryan Hoeing from the 15-day injured list to the 60-day injured list. Torn right elbow flexor tendon.
+2026-10-30,608337,Lucas Giolito,SD,P,60-day IL,Right elbow inflammation,2026-08-24,San Diego Padres transferred RHP Lucas Giolito from the 15-day injured list to the 60-day injured list. Right elbow inflammation.
+2026-10-30,660710,Rodolfo Durán,SD,C,60-day IL,Right forearm strain,2026-09-29,San Diego Padres placed C Rodolfo Durán on the 60-day injured list. Right forearm strain.
+2026-10-30,680695,Brennen Davis,SEA,CF,60-day IL,Left hamstring strain,2026-09-03,Seattle Mariners placed CF Brennen Davis on the 60-day injured list. Left hamstring strain.
+2026-10-30,806068,Colt Emerson,SEA,SS,60-day IL,Left wrist tendon repair,2026-08-14,Seattle Mariners transferred SS Colt Emerson from the 10-day injured list to the 60-day injured list. Left wrist tendon repair.
+2026-10-30,688138,Logan Evans,SEA,P,60-day IL,Recovery from torn UCL in right arm,2026-02-16,Seattle Mariners placed RHP Logan Evans on the 60-day injured list. Recovery from torn UCL in right arm.
+2026-10-30,670042,Luke Raley,SEA,RF,60-day IL,Left forearm strain,2026-08-01,Seattle Mariners transferred RF Luke Raley from the 10-day injured list to the 60-day injured list. Left forearm strain.
+2026-10-30,666374,Matt Brash,SEA,P,60-day IL,Right lat strain,2026-06-10,Seattle Mariners transferred RHP Matt Brash from the 15-day injured list to the 60-day injured list. Right lat strain.
+2026-10-30,689546,Nick Davila,SEA,P,60-day IL,SC joint sprain,2026-08-31,Seattle Mariners transferred RHP Nick Davila from the 15-day injured list to the 60-day injured list. SC joint sprain.
+2026-10-30,669717,Will Wilson,SEA,3B,60-day IL,Left thumb fracture,2026-05-02,Seattle Mariners transferred 3B Will Wilson from the 10-day injured list to the 60-day injured list. Left thumb fracture.
+2026-10-30,605288,Adrian Houser,SF,P,60-day IL,Right forearm strain,2026-08-26,San Francisco Giants transferred RHP Adrian Houser from the 15-day injured list to the 60-day injured list. Right forearm strain.
+2026-10-30,694918,Blade Tidwell,SF,P,60-day IL,Right UCL sprain,2026-09-22,San Francisco Giants transferred RHP Blade Tidwell from the 15-day injured list to the 60-day injured list. Right UCL sprain.
+2026-10-30,687931,Carson Whisenhunt,SF,P,60-day IL,Left elbow sprain,2026-08-25,San Francisco Giants transferred LHP Carson Whisenhunt from the 15-day injured list to the 60-day injured list. Left elbow sprain.
+2026-10-30,669477,Casey Schmitt,SF,LF,60-day IL,Left knee meniscus tear,2026-07-28,San Francisco Giants transferred LF Casey Schmitt from the 10-day injured list to the 60-day injured list. Left knee meniscus tear.
+2026-10-30,691740,Daniel Susac,SF,C,60-day IL,Left knee patella fracture,2026-08-10,San Francisco Giants transferred C Daniel Susac from the 10-day injured list to the 60-day injured list. Left knee patella fracture.
+2026-10-30,664056,Harrison Bader,SF,CF,60-day IL,Left plantar fasciitis,2026-05-30,San Francisco Giants transferred CF Harrison Bader from the 10-day injured list to the 60-day injured list. Left plantar fasciitis.
+2026-10-30,806185,Hayden Birdsong,SF,P,60-day IL,Tommy John surgery,2026-03-21,San Francisco Giants placed RHP Hayden Birdsong on the 60-day injured list. Tommy John surgery.
+2026-10-30,683679,Jesus Rodriguez,SF,C,60-day IL,Right elbow neuritis,2026-09-04,San Francisco Giants placed C Jesus Rodriguez on the 60-day injured list. Right elbow neuritis.
+2026-10-30,666711,Joel Peguero,SF,P,60-day IL,Left hamstring strain,2026-06-01,San Francisco Giants placed RHP Joel Peguero on the 60-day injured list. Left hamstring strain.
+2026-10-30,676130,José Buttó,SF,P,60-day IL,Right arm fatigue,2026-04-02,San Francisco Giants transferred RHP José Buttó from the 15-day injured list to the 60-day injured list. Right arm fatigue.
+2026-10-30,676775,Keaton Winn,SF,P,60-day IL,Right elbow neuritis,2026-08-20,San Francisco Giants transferred RHP Keaton Winn from the 15-day injured list to the 60-day injured list. Right elbow neuritis.
+2026-10-30,656305,Matt Chapman,SF,3B,60-day IL,Abdominal strain,2026-07-01,San Francisco Giants transferred 3B Matt Chapman from the 10-day injured list to the 60-day injured list. Abdominal strain.
+2026-10-30,646240,Rafael Devers,SF,1B,60-day IL,Core muscle injury,2026-04-16,San Francisco Giants placed 1B Rafael Devers on the 60-day injured list. Core muscle injury.
+2026-10-30,678495,Randy Rodríguez,SF,P,60-day IL,,2025-11-06,San Francisco Giants placed RHP Randy Rodríguez on the 60-day injured list.
+2026-10-30,592858,Rowan Wick,SF,P,60-day IL,Recovery from Tommy John surgery,2026-02-15,San Francisco Giants placed RHP Rowan Wick on the 60-day injured list. Recovery from Tommy John surgery.
+2026-10-30,686790,Trevor McDonald,SF,P,60-day IL,Right elbow strain,2026-07-21,San Francisco Giants transferred RHP Trevor McDonald from the 15-day injured list to the 60-day injured list. Right elbow strain.
+2026-10-30,691008,Max Rajcic,STL,P,60-day IL,Right elbow soreness,2026-07-06,St. Louis Cardinals transferred RHP Max Rajcic from the 15-day injured list to the 60-day injured list. Right elbow soreness.
+2026-10-30,670955,Edwin Uceta,TB,P,60-day IL,Right shoulder impingement,2026-04-24,Tampa Bay Rays placed RHP Edwin Uceta on the 60-day injured list. Right shoulder impingement.
+2026-10-30,689200,Jacob Melton,TB,LF,60-day IL,Right hamstring strain,2026-09-15,Tampa Bay Rays placed LF Jacob Melton on the 60-day injured list. Right hamstring strain.
+2026-10-30,669169,Jonathan Heasley,TB,P,60-day IL,,2026-06-02,Tampa Bay Rays transferred RHP Jonathan Heasley from the 15-day injured list to the 60-day injured list.
+2026-10-30,686752,Ryan Pepiot,TB,P,60-day IL,Right hip inflammation,2026-03-24,Tampa Bay Rays transferred RHP Ryan Pepiot from the 15-day injured list to the 60-day injured list. Right hip inflammation.
+2026-10-30,691945,Carter Baumler,TEX,P,60-day IL,Right intercostal strain,2026-04-05,Texas Rangers transferred RHP Carter Baumler from the 15-day injured list to the 60-day injured list. Right intercostal strain.
+2026-10-30,668390,Cole Winn,TEX,P,60-day IL,Right rotator cuff strain,2026-08-31,Texas Rangers transferred RHP Cole Winn from the 15-day injured list to the 60-day injured list. Right rotator cuff strain.
+2026-10-30,683004,Jack Leiter,TEX,P,60-day IL,Right ankle posterior impingement,2026-06-21,Texas Rangers transferred RHP Jack Leiter from the 15-day injured list to the 60-day injured list. Right ankle posterior impingement.
+2026-10-30,692030,Jose Corniell,TEX,P,60-day IL,,2026-07-21,Texas Rangers transferred RHP Jose Corniell from the 15-day injured list to the 60-day injured list.
+2026-10-30,680718,Addison Barger,TOR,RF,60-day IL,Right elbow inflammation,2026-05-11,Toronto Blue Jays transferred RF Addison Barger from the 10-day injured list to the 60-day injured list. Right elbow inflammation.
+2026-10-30,623993,Anthony Santander,TOR,RF,60-day IL,Left shoulder labral tear,2026-03-25,Toronto Blue Jays transferred RF Anthony Santander from the 10-day injured list to the 60-day injured list. Left shoulder labral tear.
+2026-10-30,670102,Bowden Francis,TOR,P,60-day IL,Right elbow surgery,2026-02-18,Toronto Blue Jays placed RHP Bowden Francis on the 60-day injured list. Right elbow surgery.
+2026-10-30,664074,Cody Ponce,TOR,P,60-day IL,Right knee ACL sprain,2026-03-31,Toronto Blue Jays transferred RHP Cody Ponce from the 15-day injured list to the 60-day injured list. Right knee ACL sprain.
+2026-10-30,814005,Jake Bloss,TOR,P,60-day IL,,2026-08-12,Toronto Blue Jays placed RHP Jake Bloss on the 60-day injured list.
+2026-10-30,682729,Jonatan Clase,TOR,LF,60-day IL,Left plantar fasciitis,2026-07-22,Toronto Blue Jays transferred LF Jonatan Clase from the 10-day injured list to the 60-day injured list. Left plantar fasciitis.
+2026-10-30,621244,José Berríos,TOR,P,60-day IL,Right elbow stress fracture,2026-05-27,Toronto Blue Jays placed RHP José Berríos on the 60-day injured list. Right elbow stress fracture.
+2026-10-30,686452,Drew Millas,WSH,C,60-day IL,Left index finger fracture,2026-07-15,Washington Nationals transferred C Drew Millas from the 10-day injured list to the 60-day injured list. Left index finger fracture.
+2026-10-30,686610,Ken Waldichuk,WSH,P,60-day IL,Left forearm tightness,2026-04-13,Washington Nationals transferred LHP Ken Waldichuk from the 15-day injured list to the 60-day injured list. Left forearm tightness.
+2026-10-30,663362,Matt Waldron,WSH,P,60-day IL,Chest inflammation,2026-09-08,Washington Nationals transferred RHP Matt Waldron from the 15-day injured list to the 60-day injured list. Chest inflammation.
+2026-10-30,680730,Mitchell Parker,WSH,P,60-day IL,Left elbow inflammation,2026-06-29,Washington Nationals transferred LHP Mitchell Parker from the 15-day injured list to the 60-day injured list. Left elbow inflammation.
+2026-10-30,676571,PJ Poulin,WSH,P,60-day IL,Left flexor strain,2026-07-19,Washington Nationals transferred LHP PJ Poulin from the 15-day injured list to the 60-day injured list. Left flexor strain.
