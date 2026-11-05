@@ -75,8 +75,8 @@ public final class Main {
         }
         System.err.println("""
                 Usage:
-                  mlb-injuries fetch [--save] [--history FILE]
-                  mlb-injuries report [--top N] [--history FILE]
+                  mlb-injury-tracker fetch [--save] [--history FILE]
+                  mlb-injury-tracker report [--top N] [--history FILE]
                 The history file defaults to data/injuries.csv.""");
         System.exit(error == null ? 0 : 2);
     }

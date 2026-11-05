@@ -83,7 +83,7 @@ public final class MlbStatsClient {
         return pathAndQuery -> {
             HttpRequest request = HttpRequest.newBuilder(URI.create(baseUrl + pathAndQuery))
                     .header("Accept", "application/json")
-                    .header("User-Agent", "mlb-injuries (https://github.com/kennethkimbrough/mlb-injuries)")
+                    .header("User-Agent", "mlb-injury-tracker (https://github.com/kennethkimbrough/mlb-injury-tracker)")
                     .timeout(Duration.ofSeconds(60))
                     .GET()
                     .build();
