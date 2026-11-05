@@ -1,12 +1,12 @@
 # MLB injury tracker
 
-[![Build](https://github.com/kennethkimbrough/mlb-injuries/actions/workflows/build.yml/badge.svg)](https://github.com/kennethkimbrough/mlb-injuries/actions/workflows/build.yml)
+[![Build](https://github.com/kennethkimbrough/mlb-injury-tracker/actions/workflows/build.yml/badge.svg)](https://github.com/kennethkimbrough/mlb-injury-tracker/actions/workflows/build.yml)
 
 A command-line Java program that lists every player currently on an MLB
 injured list, records a snapshot of the lists each day, and reports who has
 been out longest and which teams have been hit hardest.
 
-**Live page:** https://kennethkimbrough.github.io/mlb-injuries/ shows the
+**Live page:** https://kennethkimbrough.github.io/mlb-injury-tracker/ shows the
 latest lists by body part and by team, who has been out longest, who went on
 or came off since the previous day, and the daily count over time. It is
 rebuilt after every daily snapshot.
@@ -88,9 +88,9 @@ cp data/injuries.csv site/ && (cd site && python3 -m http.server 8000)
 Requires Java 17+ and Maven.
 
 ```sh
-mvn -B package                                   # builds target/mlb-injuries.jar and runs the tests
-java -jar target/mlb-injuries.jar fetch --save
-java -jar target/mlb-injuries.jar report --top 15
+mvn -B package                                   # builds target/mlb-injury-tracker.jar and runs the tests
+java -jar target/mlb-injury-tracker.jar fetch --save
+java -jar target/mlb-injury-tracker.jar report --top 15
 ```
 
 Options: `--history FILE` changes where the CSV lives (default
